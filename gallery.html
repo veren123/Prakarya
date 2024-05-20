@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+    }
+
+    header {
+        background-color: #343a40;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .gallery-item {
+        flex: 1 1 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.1);
+    }
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .lightbox-content {
+        max-width: 90%;
+        max-height: 90%;
+    }
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 2rem 0;
+    }
+
+    section {
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        color: #343a40;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+    }
+
+    ul li {
+        margin-bottom: 0.5rem;
+    }
+
+    ul,
+    ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    ul li,
+    ol li {
+        margin-bottom: 0.5rem;
+    }
+</style>
+
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+    <main>
+        <div class="gallery">
+            <div class="gallery-item"><img src="./Produk/foto1.jpg" alt="Photo 1"></div>
+            <div class="gallery-item"><img src="./Produk/foto2.jpg" alt="Photo 2"></div>
+            <div class="gallery-item"><img src="./Produk/foto3.jpg" alt="Photo 3"></div>
+            <div class="gallery-item"><img src="./Produk/foto4.jpg" alt="Photo 4"></div>
+        </div>
+    </main>
+
+    <hr />
+    <section class="materials">
+        <h3 style="text-align: center;">Alat-Alat</h2>
+            <ul>
+                <li>1. <b> Roda Putar (Pottery Wheel): </b> Untuk membentuk tanah liat menjadi pot. </li>
+                <li>2. <b>Alat Pemodelan (Modeling Tools): </b>Pisau, spatula, dan berbagai alat pemotong dan pembentuk.
+                </li>
+                <li>3. <b>Oven Keramik (Kiln): </b> membakar dan mengeraskan gerabah.</li>
+                <li>4. <b>Batang Kayu (Wooden Rib): </b> Untuk membentuk dan menghaluskan permukaan.</li>
+                <li>5. <b>Alat Pengukir (Loop Tools): </b> Untuk mengukir dan menghaluskan detail.</li>
+                <li>6. <b>Spons (Sponges):</b>Untuk menghaluskan permukaan dan menghilangkan kelebihan air.</li>
+                <li>7. <b>Alat Penghalus (Metal Rib):</b>Untuk menghaluskan dan membentuk tanah liat.</li>
+                <li>8. <b>Penyemprot Air (Spray Bottle): </b> Untuk menjaga kelembaban tanah liat.</li>
+            </ul>
+    </section>
+
+    <section class="tools">
+        <h3 style="text-align: center;">Bahan-Bahan</h2>
+            <ul>
+                <li>1.<b>Tanah Liat (Clay): </b>Bahan dasar untuk membuat gerabah.
+                </li>
+                <li>2. <b>Glasir (Glaze):</b> Untuk memberikan warna dan lapisan pelindung pada gerabah.</li>
+                <li>3. <b>Engobe: </b>Cairan berwarna untuk dekorasi sebelum glasir.</li>
+                <li>4. <b>Cat Underglaze:</b>Cat khusus yang diterapkan sebelum glasir.</li>
+                <li>5. <b>Bahan Pengencer (Slip):</b>Tanah liat cair yang digunakan untuk menggabungkan bagian-bagian
+                    gerabah.</li>
+                <li>6. <b>Oksida Logam (Metal Oxides): </b>Untuk efek pewarnaan khusus pada glasir.</li>
+                <li>7. <b>Stain Keramik:</b>Pewarna keramik yang digunakan untuk dekorasi.</li>
+            </ul>
+    </section>
+    <hr />
+    <section class="instructions">
+        <h2>Cara Membuat Pot dari Tanah Liat</h2>
+        <p>Membuat pot dari tanah liat adalah proses yang membutuhkan ketelitian, kesabaran, dan beberapa teknik dasar
+            dalam kerajinan tanah liat. Berikut adalah langkah-langkah profesional dalam membuat pot tanah liat:</p>
+        <br />
+        <h3>Alat dan Bahan</h3>
+        <br />
+        <ul class="tools-list">
+            <li><strong>Tanah liat</strong>: Pilih tanah liat yang berkualitas baik, biasanya yang digunakan adalah
+                jenis stoneware atau earthenware.</li>
+            <li><strong>Meja putar (potter's wheel)</strong>: Ini penting untuk membentuk pot dengan simetri yang baik.
+            </li>
+            <li><strong>Alat pemotong tanah liat</strong>: Biasanya berupa kawat pemotong atau pisau khusus.</li>
+            <li><strong>Alat pembentuk dan penghalus</strong>: Seperti loop tool, rib, dan sponge.</li>
+            <li><strong>Air</strong>: Untuk membantu melembutkan dan membentuk tanah liat.</li>
+            <li><strong>Penggulung tanah liat</strong>: Untuk membuat lempengan jika diperlukan.</li>
+            <li><strong>Alat ukir dan hias</strong>: Untuk membuat dekorasi atau pola pada pot.</li>
+        </ul>
+
+        <h3>Langkah-Langkah</h3>
+        <br />
+        <ol class="steps-list">
+            <li><strong>Persiapan Tanah Liat</strong>
+                <ul>
+                    <li>Uleni tanah liat untuk menghilangkan gelembung udara dan mendapatkan konsistensi yang baik.
+                        Proses ini dikenal sebagai wedging.</li>
+                </ul>
+            </li>
+            <li><strong>Pembentukan Dasar Pot</strong>
+                <ul>
+                    <li>Letakkan tanah liat di tengah meja putar.</li>
+                    <li>Basahi tangan dan tanah liat untuk memudahkan pembentukan.</li>
+                    <li>Nyalakan meja putar dengan kecepatan sedang.</li>
+                    <li>Bentuk tanah liat menjadi bola yang simetris dengan menekan dan menarik tanah liat menggunakan
+                        kedua tangan.</li>
+                </ul>
+            </li>
+            <li><strong>Membentuk Silinder</strong>
+                <ul>
+                    <li>Setelah bola tanah liat terbentuk, lubangi tengahnya menggunakan jempol sambil meja putar
+                        berputar.</li>
+                    <li>Gunakan kedua tangan untuk memperlebar lubang dan membentuk silinder dengan dinding yang rata.
+                    </li>
+                    <li>Tarik dinding silinder ke atas untuk mencapai tinggi yang diinginkan.</li>
+                </ul>
+            </li>
+            <li><strong>Membentuk Pot</strong>
+                <ul>
+                    <li>Setelah silinder terbentuk, mulai membentuk leher, bahu, dan badan pot sesuai desain yang
+                        diinginkan.</li>
+                    <li>Gunakan alat pembentuk dan penghalus untuk merapikan permukaan dan menghilangkan
+                        ketidaksempurnaan.</li>
+                    <li>Berhati-hati agar dinding pot memiliki ketebalan yang seragam.</li>
+                </ul>
+            </li>
+            <li><strong>Pengeringan</strong>
+                <ul>
+                    <li>Biarkan pot mengering secara perlahan hingga mencapai tahap leather-hard (setengah kering).</li>
+                    <li>Pada tahap ini, pot masih dapat dibentuk atau dihias lebih lanjut, tetapi cukup keras untuk
+                        mempertahankan bentuknya.</li>
+                </ul>
+            </li>
+            <li><strong>Hiasan dan Finishing</strong>
+                <ul>
+                    <li>Gunakan alat ukir dan hias untuk menambahkan detail atau pola pada pot.</li>
+                    <li>Anda juga dapat menambahkan slip (campuran tanah liat dan air) untuk efek warna yang berbeda.
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Pembakaran Pertama (Bisque Firing)</strong>
+                <ul>
+                    <li>Setelah pot benar-benar kering, tempatkan di dalam kiln dan bakar pada suhu sekitar 900-1000
+                        derajat Celsius untuk pembakaran pertama.</li>
+                    <li>Pembakaran ini membuat pot lebih kuat dan siap untuk diberi glasir.</li>
+                </ul>
+            </li>
+            <li><strong>Glasir</strong>
+                <ul>
+                    <li>Setelah pembakaran pertama, aplikasikan glasir pada pot untuk memberikan warna dan lapisan
+                        pelindung.</li>
+                    <li>Pastikan glasir merata dan tidak terlalu tebal untuk menghindari cacat saat pembakaran kedua.
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Pembakaran Kedua (Glaze Firing)</strong>
+                <ul>
+                    <li>Tempatkan pot yang sudah dialisir kembali ke dalam kiln.</li>
+                    <li>Bakar pada suhu yang lebih tinggi, biasanya sekitar 1200-1300 derajat Celsius, tergantung jenis
+                        tanah liat dan glasir yang digunakan.</li>
+                    <li>Pembakaran kedua ini akan mengikat glasir ke pot dan memberikan hasil akhir yang tahan lama dan
+                        mengkilap.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Tips Tambahan</h3>
+        <ul class="tips-list">
+            <li>Pastikan selalu menjaga kebersihan alat dan tempat kerja.</li>
+            <li>Lakukan uji coba dengan berbagai jenis tanah liat dan glasir untuk menemukan kombinasi yang terbaik.
+            </li>
+            <li>Jangan terburu-buru dalam setiap tahap; biarkan proses berjalan dengan alami dan sabar.</li>
+        </ul>
+
+        <p>Dengan mengikuti langkah-langkah ini dengan hati-hati, Anda akan dapat membuat pot tanah liat yang indah dan
+            berkualitas tinggi. Selamat mencoba!</p>
+    </section>
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.close');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    const imgSrc = this.querySelector('img').getAttribute('src');
+                    openLightbox(imgSrc);
+                });
+            });
+
+            closeBtn.addEventListener('click', function () {
+                lightbox.style.display = 'none';
+            });
+
+            lightbox.addEventListener('click', function (e) {
+                if (e.target !== lightboxImg) {
+                    lightbox.style.display = 'none';
+                }
+            });
+
+            function openLightbox(src) {
+                lightboxImg.src = src;
+                lightbox.style.display = 'flex';
+            }
+        });
+
+    </script>
+</body>
+
+</html>
